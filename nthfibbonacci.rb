@@ -1,6 +1,20 @@
-def fibonacci( n )
-    return  n  if n <= 1 
-    fibonacci( n - 1 ) + fibonacci( n - 2 )
-end 
-puts fibonacci( 10 )
-# => 55
+def fibonacci(n)
+  a = 0
+  b = 1
+
+  # Compute Fibonacci number in the desired position.
+  n.times do
+    temp = a
+    a = b
+    # Add up previous two numbers in sequence.
+    b = temp + b
+  end
+
+  return a
+end
+
+# Write first 15 Fibonacci numbers in sequence.
+15.times do |n|
+  result = fibonacci(n)
+  puts result
+end
